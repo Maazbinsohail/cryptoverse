@@ -1,14 +1,57 @@
-import React from 'react'
-import Header from '../header/Header'
+import React, { useEffect, useState } from "react";
+import Header from "../header/Header";
+import axios from "axios";
+import { Baseurl } from "../urls/Baseurl";
+import Loader from "../loader/Loader";
+import "./Exchanges.css";
 
 const Exchanges = () => {
+  const [loading, setLoadong] = useState(true);
+  const [exchange, setExchange] = useState([]);
+  useEffect(() => {
+    const getExchangeData = async () => {
+      const { data } = await axios.get(`${Baseurl}/exchanges`);
+      console.log(data);
+      setExchange(data);
+      setLoadong(false);
+    };
+    getExchangeData();
+  }, []);
   return (
- <>
- <Header/>
- <div>Exchanges</div>
- 
- </>
-  )
-}
+    <>
+      {loading ? (
+        <Loader />
+      ) : (
+        <>
+          <Header />
+          <div>
+            {
+              exchange.map((exchanges,i) => {
+                return(
+                  <div key={i} className="ex-cards">
+              <div className="images">
+              <img src={exchanges.image} alt="" />
+              </div>
 
-export default Exchanges
+              <div className="name">
+                {exchanges.name}
+              </div>
+              <div className="price">
+               {exchanges.trade_volume_24h_btc.toFixed(2)}
+              </div>
+              <div className="rank">
+               {exchanges.trust_score_rank}
+              </div>
+            </div>
+                )
+              })
+            }
+          </div>
+        </>
+      )
+    }
+    </>
+  );
+};
+
+export default Exchanges;
