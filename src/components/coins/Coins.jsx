@@ -4,6 +4,7 @@ import axios from "axios";
 import { Baseurl } from "../urls/Baseurl";
 import Loader from "../loader/Loader";
 import "./Coins.css";
+import { Link } from "react-router-dom";
 
 const Coins = () => {
   const [loading, setLoadong] = useState(true);
@@ -36,7 +37,7 @@ const Coins = () => {
           </div>
           {coins.map((coindata, i) => {
             return (
-              <CoinCard key={i} coindata={coindata} currencySymbol={currencySymbol} />
+              <CoinCard key={i} coindata={coindata} id={coindata.id} currencySymbol={currencySymbol} />
             );
           })}
         </>
@@ -47,9 +48,10 @@ const Coins = () => {
 
 
 
-function CoinCard({ coindata, i, currencySymbol }) {
+function CoinCard({ coindata, i, currencySymbol, id }) {
   const profit = coindata.price_change_percentage_24h > 0;
   return (
+    <Link to={`/coins/${id}`} style={{ color: "white", textDecoration: "none" }}>
     <div key={i} className="ex-cards">
       <div className="images">
         <img height={90} src={coindata.image} alt="" />
@@ -73,6 +75,8 @@ function CoinCard({ coindata, i, currencySymbol }) {
         <h5 style={{ color: "Yellow" }}>symbol</h5> {coindata.symbol}
       </div>
     </div>
+    
+    </Link>
 
   );
 }
