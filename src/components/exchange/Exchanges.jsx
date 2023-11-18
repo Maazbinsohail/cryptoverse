@@ -4,6 +4,7 @@ import axios from "axios";
 import { Baseurl } from "../urls/Baseurl";
 import Loader from "../loader/Loader";
 import "./Exchanges.css";
+import Model from "../model/Model";
 
 const Exchanges = () => {
   const [loading, setLoadong] = useState(true);
@@ -24,6 +25,7 @@ const Exchanges = () => {
       ) : (
         <>
           <Header />
+          <Model />
           <div>
             {
               exchange.map((exchanges,i) => {

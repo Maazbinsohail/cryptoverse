@@ -10,6 +10,7 @@ const Coins = () => {
   const [loading, setLoadong] = useState(true);
   const [coins, setCoins] = useState([]);
   const [currency, setCurrency] = useState("pkr");
+  const [search, setSearch] = useState("");
   const currencySymbol = currency === "pkr" ? "Rs" : "$";
 
   useEffect(() => {
@@ -30,12 +31,29 @@ const Coins = () => {
       ) : (
         <>
           <Header />
+
+          <div className="searchbar">
+          <input type="text" 
+            placeholder='Search Your Coins ' 
+            onChange={(e)=>setSearch(e.target.value)}
+        
+          
+            />
+         
+          </div>
+
           <div className="btns">
           <button onClick={() => setCurrency("pkr")}>PKR</button>
           <button onClick={() => setCurrency("usd")}>USD</button>
           
           </div>
-          {coins.map((coindata, i) => {
+          {coins.filter((data)=>{
+         if(search === ""){
+          return data
+         }else if(data.name.toLowerCase().includes(search.toLowerCase())){
+          return data
+         }
+          }).map((coindata, i) => {
             return (
               <CoinCard key={i} coindata={coindata} id={coindata.id} currencySymbol={currencySymbol} />
             );
