@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const Coins = () => {
   const [loading, setLoadong] = useState(true);
   const [coins, setCoins] = useState([]);
-  const [currency, setCurrency] = useState("pkr");
+  const [currency, setCurrency] = useState("usd");
   const [search, setSearch] = useState("");
   const currencySymbol = currency === "pkr" ? "Rs" : "$";
 
