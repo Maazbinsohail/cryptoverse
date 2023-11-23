@@ -1,55 +1,52 @@
- .Nav{
+.Nav {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     background-color: rgb(22, 20, 20);
     padding-bottom: 10px;
-    /* position: fixed; */
     width: 100%;
     top: 0%;
-} 
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    z-index: 1000;
+}
 
-.Nav ul{
+.Nav ul {
     display: flex;
     list-style: none;
     margin-left: 35rem;
-
 }
-.Nav ul li a{
-   margin-left: 20px;
+
+.Nav ul li a {
+    margin-left: 20px;
     text-decoration: none;
     color: white;
     font-size: 20px;
-
 }
-/* .Nav h1 a {
-    text-decoration: none;
-    color: white;
-    
-} */
- 
 
-.logo{
+.logo {
     display: flex;
     align-items: center;
 }
 
 @media only screen and (max-width: 600px) {
-    .logo h1{
-        font-size: 20px;
-    }  
-    .Nav{
+    .Nav {
         display: flex;
         justify-content: space-evenly;
         margin: 0;
         padding: 0;
-        height: 4rem;
+        height: auto; /* Adjust height for smaller screens */
     }
-    .Nav ul li a{
-        margin-left: 10px;
-        /* padding: 0; */
-        font-size: 18px;
-    }
-    
 
-} 
+    .Nav ul {
+        margin-left: 0; /* Remove margin for smaller screens */
+    }
+
+    .Nav ul li a {
+        margin-left: 10px;
+        font-size: 16px; /* Adjust font size for better readability */
+    }
+
+    .logo h1 {
+        font-size: 20px; /* Adjust logo font size for smaller screens */
+    }
+}

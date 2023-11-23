@@ -13,7 +13,8 @@ const Header = () => {
    <ul>
     <li> <Link to='/'>Home</Link></li>
     <li> <Link to='/coins'>Coins</Link></li> 
-    <li> <Link to='/trending'>Trending</Link></li> 
+    <li> <Link to='/trending'>NFT</Link></li> 
+    <li> <Link to='/details'>detail</Link></li> 
   
    </ul>
    </div>

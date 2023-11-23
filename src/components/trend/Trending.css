@@ -2,7 +2,6 @@
     display: flex;
     justify-content: space-evenly;
     margin-top: 5rem;
-    
 }
 
 .card ul {
@@ -10,7 +9,7 @@
     padding: 0;
     margin: 0;
     display: flex;
-    
+    flex-wrap: wrap; /* Allow flex items to wrap to the next line */
 }
 
 .card li {
@@ -21,21 +20,20 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    
+    width: 200px; /* Set a fixed width for each card on larger screens */
 }
 
 .card li .name,
 .card li .symbol,
 .card li .rank {
     margin-bottom: 0.5rem;
-   width: 100%;
+    width: 100%;
 }
 
-
 .card li .coinimage img {
-    max-width: 100px;
-    max-height: 100px;
-    border-radius: 40%;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%; 
 }
 
 @media only screen and (max-width: 768px) {
@@ -49,7 +47,7 @@
     }
 }
 
-/* Media Query for Mobile Devices */
+/* Media Query for Smaller Screens */
 @media only screen and (max-width: 480px) {
     .card li {
         width: 100%;

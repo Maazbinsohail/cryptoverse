@@ -38,7 +38,7 @@ function Trending() {
         <ul>
           {trendingData.map((nfts) => (
             <li key={nfts.id}>
-              <div className="name"><h5 style={{ color: "Yellow" }}>{nfts.name}</h5></div>
+              <div className="name">Name<h5 style={{ color: "Yellow" }}>{nfts.name}</h5></div>
               <div className="symbol"> Symbol {" "}
                <h5 style={{ color: "Yellow" }}>{nfts.symbol}</h5> 
                </div>

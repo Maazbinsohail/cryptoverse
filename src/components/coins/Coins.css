@@ -29,7 +29,7 @@
      margin-left: 12rem;
  }
  .searchbar input{
-    height: 2rem;
+    height: 1.5rem;
     width: 20rem;
     position: fixed;
     top: 1%;
@@ -42,8 +42,8 @@
 @media only screen and (max-width: 600px) {
     .searchbar input {
         position: fixed;
-        top: 10vh;
-        left: 7vw;
+        top: 8vh;
+        left: 8vw;
     }
     
     .btns{
