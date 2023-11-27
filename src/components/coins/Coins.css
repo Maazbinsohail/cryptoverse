@@ -28,26 +28,25 @@
  .btns{
      margin-left: 12rem;
  }
- .searchbar input{
+ .searchbar input {
     height: 1.5rem;
     width: 20rem;
     position: fixed;
-    top: 1%;
+    top: 2%;
     left: 35%;
     padding-left: 5px;
     display: flex;
     flex-direction: column;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1024px) {
     .searchbar input {
-        position: fixed;
-        top: 8vh;
-        left: 8vw;
+        position: relative;
+        top: 4vh;
+        left: 4vw;
     }
     
-    .btns{
+    .btns {
         margin-left: 10px;
     }
-    }
-    
+}

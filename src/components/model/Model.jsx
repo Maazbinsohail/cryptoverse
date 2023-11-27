@@ -9,7 +9,7 @@ function OurModel(props) {
 
 const Model = () => {
   return (
-    <div>
+    <div style={{height: "100vh",  }}>
       <Canvas dpr={[1, 2]} shadows camera={{ fov: 45 }} style={{ position: "absolute", top: "58px", width: "100%" }}>
         <color attach="background" args={['#101010']} />
         <ambientLight intensity={1} />
